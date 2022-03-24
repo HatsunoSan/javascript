@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">Resultado</div>
+    <script>
+        
+
+        function calcular() {
+            var txtv = (window.document.querySelector('input#txtvel').value)
+            //var vel = Number(txt) // ^ Colocando entre parênteses e no final adicionando ".value" ja o transforma em número!
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p>Sua velocidade atual é de <strong>${txtv}</strong>Km/h!</p>`
+            if (txtv > 60) {
+                res.innerHTML += `<p>Você está <strong>MULTADO</strong> por excesso de velocidade!</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
+        }
+    </script>
+</body>
+</html>
+<!--
+Desafio 01: Crie o exercício 09 em formato de site!
+
+-->
+
+
+<!--
+    No caso não tem  necessidade de criar mais uma variável para adicionar no "value".
+Após criar a variável que desejar ser "lida" pelo usuário basta apenas colocar
+Tudo dentro de um parentes e adicionar o .value ao final.
+
+
+Exemplo: 
+
+
+var n = (document.getElementById('nasc').value)-->

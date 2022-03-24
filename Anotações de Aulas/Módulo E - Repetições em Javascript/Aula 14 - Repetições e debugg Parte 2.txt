@@ -1,0 +1,71 @@
+Na aula anterior vemos a estrutura de repetição While:
+var pizza = 1
+while (pizza <= 8) {
+	console.log(`Fatia de nº ${pizza} comida`)
+	pizza++
+}
+
+Onde primeiramente é feito o teste de lógica e depois o bloco é executado...
+
+
+
+
+E vemos também a estrutura de repetição Do While:
+
+var pizza = 1
+do {
+	console.log(`Fatia de nº ${pizza} comida`)
+	pizza++
+} while (pizza <= 8)
+
+Onde primeiramente é feito o bloco e depois o teste de lógica.
+
+
+
+
+
+
+A partir de agora vamos ver a Estrutura de Repetição com Variável de Controle:
+Basicamente, nesse são feito 3 coisas: Inicialização, Teste lógico e o Incremento.
+
+Primeiramente essa estrutura fará a Inicialização e o Teste Lógico. Sendo o teste verdadeiro, ele vai executar o bloco e feito o bloco ele fará o looping, e no momento do looping ele fará o Incremento. O teste lógico então é feito mais uma vez, e sendo verdadeiro, tudo se repete até se tornar falso.
+
+mas como essa repetição é escrita em Javascript?
+
+for (inicio; teste; incr) { // é possível utilizar while e do while dentro desse for
+
+}
+
+mas COMO é isso em Javascript?
+Utilizaremos o while de exemplo.
+
+var c=1
+while (c<=10) {
+	bloco
+}
+
+Na estrutura de repetição com variável de controle, a linha 42 é a Inicialização, o teste lógico é o "c<=10", e o Incremento é o "c++":
+
+
+
+for (var c=1; c<=3; c++) {
+	bloco
+}
+
+
+Tanto faz escrever o while ou o for. Mas a grande maioria dos programadores preferem utilizar o for quando sabem o limite das execuções de seus programas.
+
+
+
+Existe uma ferramenta MUITO IMPORTANTE NA PROGRAMAÇÃO! A Depuração (ou Debugg). Ela serve pro nosso código ser executado na linha que quisermos e lentamente para verificarmos erros.
+
+Primeiramente, cole isso em um arquivo js vazio:
+
+console.log('Vai começar...')
+for (var c = 1;c <= 5;c++) {
+    console.log(c)
+}
+
+Em seguida, la em cima na aba Executar, clique em Iniciar Depuração. Ou na barra na esquerda, em um insetinho com um Play. (talvez você precise abrir também o console de depuração, mas aí vc que se vire)
+
+Agora, do lado do número da primeira linha, deixe o mouse em cima. Há um círculo vermelho, certo? Clique nele. Esse é o breakpoint, ou ponto de interrupção. Nesse exemplo queremos monitorar a variável "c" e como ela se comporta. Sendo assim, depois da bolinha vermelha, no menu que se abriu clique em Executar e Depurar. Em inspeção você vai querer deixar a variável c em evidencia, então clique no "+" e digite "c". Verá que dará algum erro como "undefined" ou "not available" (ou não), mas não se preocupe. Dê o play, e veja que o código não executa como deveria. Isso é porque ele executa lentamente. Agora você sabe como analisar seu código caso ele seja imenso.

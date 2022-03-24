@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.alert('Olá, essa é a sua prática até a aula 06 ex 04.') //PopUp com mensagem
+        confirm('Não se esqueça de comentar TODOS os comandos, pelo menos no início, certo?') //PopUp com confirmação
+        //Preferível utilizar window.xyz, mas apenas o comando ja funciona.
+        var nome = window.prompt('Agora, qual o seu nome?') //Caixa de pergunta com variável.
+        var idade = Number.parseInt(window.prompt('Qual sua idade?')) //Formatando string para Inteiro e salvando em uma variável
+
+        document.write(`Olá <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.<br/>`)
+        /*
+        "document.write" escreverá na página. 
+        "<strong></strong>" é uma TAG de HTML que deixará em negrito o que estiver entre.
+        "${xyz}" é um String Template, tu pode trazer o que estiver salvo em variável ali dentro além de utilizar funções.
+        "xyz.lenght" contará a quantidade de caracteres salva na variável "xyz"
+        "<br/>" Outra TAG de HTML, esse quebrará para a linha de baixo.
+        */
+        document.write(`Você tem ${idade} anos.</br>`)
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}!</br>Seu nome em minúsculas é ${nome.toLowerCase()}!`)
+        //"xyz.ToUpperCase()" deixa TUDO maiúsculo, e "xyz.ToLowerCase()" deixa tudo minúsculo.
+        var n1 = Number.parseFloat(prompt('Digite um número real (Utilize PONTO, não VÍRGULA!):'))
+        //Formatando para valor Float
+        var n2 = Number(prompt('Digite outro número:'))
+        //apenas "Number(xyz)" deixará que o programa se encarregue de determinar se é inteiro ou outro.
+        
+        document.write(`</br>A soma dos números ${n1} e ${n2} é ${n1 + n2}!`)
+        var salário = Number(prompt('Digite o seu salário que o deixaria confortável (lembrando, utilizando ponto e não vírgula):'))
+        var salário = salário.toFixed(2)
+        document.write(`</br>Este é o seu salário: ${salário}. Mas... em que moeda?</br>`)
+        var salário = salário.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+        document.write(`${salário}`) //teoricamente era pra mostrar o R$ todo certinho, mas...
+        //prática concluída
+        
+
+
+    </script>
+</body>
+</html>

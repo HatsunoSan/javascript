@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01 - Qual seu país</title>
+</head>
+
+<body>
+    <h1>Comparando países</h1>
+    <p>Digite seu país para determinar  a <strong>nacionalidade</strong>!</p>
+    <input type="text" name="pais1" id="pais1"> |
+
+    <input type="button" value="Comparar" onclick="comparar()">
+    <div id="res">Você é...</div>
+    <script>
+        function comparar() {
+            var country = window.document.querySelector('input#pais1').value.toLowerCase()
+            // Aparentemente, o ".value" é importantíssimo, pois APARENTEMENTE,
+            // o usuário apenas digitar não faz a informação gravada se tornar nem string nem numero
+            var res = window.document.querySelector('div#res')
+            if (country == 'brasil') {
+                res.innerHTML = `Você é brasileiro!`
+            } else {
+                res.innerHTML = `Você é estrangeiro!`
+            }
+        }
+    </script>
+</body>
+
+</html>
+<!--
+    Exercício. Não esqueçam de colocar .value.toLowerCase(); no final do valor da sua variável 
+    "Ex: var país= window.document.querySelector(input#(id da caixa)).value.toLowerCase();"
+para que quando digitar Brasil ou brasil (maiúscula ou minúscula) ela reconheça
+ ambos como o País.
+-->

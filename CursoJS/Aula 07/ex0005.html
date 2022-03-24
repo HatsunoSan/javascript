@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> /* Essa é a parte do CSS, que termina ali embaixo no style*/
+        body {
+            background-color: rgb(89, 27, 148);
+            color: lightblue;
+            font: normal 20pt arial;
+        }
+    </style> 
+</head>
+<body>
+
+    <script>
+        var nome = window.prompt('Qual é o seu nome?')
+        document.writeln(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras.<br/>`)
+        /*
+        Mostrar a mensagem no site com "document.write",
+        Deixar o nome em negrito com <strong>XYZ</strong>, 
+        e mostrar a quantidade de caracteres com "${nome.lenght}". 
+        E quebrar linha com "<br/>" ! Isso é uma TAG de HTML ! ! ! ! ! ! ! ! ! ! !
+        */
+        // o "writeln" faz com que as mensagens não apareçam no site COLADAS!
+        document.writeln(`Seu nome em maiúsculas é ${nome.toUpperCase()}!<br/>`)
+        // Código autoexplicativo.
+        document.writeln(`Seu nome em minúsculas é ${nome.toLowerCase()}!`)
+        // Mesma coisa.
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+Operadores:
+	*Aritméticos
+	*Atribuição
+	*Relacionais
+	*Lógicos
+	*Ternário
+	*Typeof (é um tipo de operador)
+Focaremos no Aritméticos e Atribuições
+
+Aritméticos:
+"+"  - Adição 			5 + 2  == 7
+"-"  - Subtração		5 - 2  == 3
+"*"  - Multiplicação	5 * 2  == 10
+"/"  - Divisão Real		5 / 2  == 2.5
+"%"  - Divisão Inteira	5 % 2  == 1
+"**" - Exponenciação	5 ** 2 == 25
+
+Existe uma parada chamada ORDEM DE PRECEDÊNCIA. Nas contas matemáticas existe uma ordem pra calcular alguma coisa:
+
+	"()" - Primeiro nós calculamos os parênteses.
+	"**" - Depois nós calculamos as exponenciações (2², 5³, e etc)
+	"*", "/", "%" - Depois vem esses 3, e calculamos quem aparecer primeiro no cálculo.
+	"+", "-" - E por último, adição e subtração.
+E bom, o básico. Se eu quiser guardar o valor de qualquer cálculo, preciso criar uma variável e fazer a conta.
+por exemplo
+var soma = 5 + 3
+
+Agora quando eu criar um alert ou um write ou seja la qual foi o sinônimo de print do python e pedir a variável "soma", o programa me apresentará a resposta.
+
+var n1 = 5 + 3
+var n1 = n1 - 2
+var n1 = n1 + 7
+
+meio chato ficar colocar n1 = n1 + x né?
+Simplifique.
+
+var n1 = 5 + 3
+var n1 += 7
+var n1 -= 7
+
+use "y=" x //Onde "y=" é um operador matemático e o "recebe" da programação (como +=) e "x" o número para calcular a conta.
+
+Existe também n1++ ou ++n1 que aparentemente vai aumentar o valor em 1 ou tirar em 1, n sei bem como funcionar

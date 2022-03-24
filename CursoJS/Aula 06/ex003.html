@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa</title>
+    <style>
+        body {
+            background-color: rgb(89, 27, 148); /* Adivinha? Um comentário. Em CSS */
+            color: lightblue;
+            font: normal 20pt arial;
+        }
+    </style>
+</head>
+<body>
+   <h1>Olá, Mundo!</h1> <!-- Isso é um comentário. em HTML-->
+   <p>Me sinto nostálgico por algum motivo em iniciar novamente do zero, e novamente criar um "Olá, mundo".</p>
+   <script>
+        var n1 = Number(window.prompt('Digite um número:'));
+        // O que antes era string, agora convertido para INTEIRO
+        var n2 = Number(window.prompt('Digite outro número:')); 
+        //   O que antes era string, agora convertido para FLOAT
+        var soma = n1 + n2
+        window.alert(`A soma entre ${n1} e ${n2} é ${soma}.`); 
+        //Template String. Atenção à Crase invertida ("``"), pois o Template String só funciona dessa forma.
+        //se o sinal de "+" é CONCATENAÇÃO, o Template String é chamado de INTERPOLAÇÃO!
+   </script>
+</body>
+</html>

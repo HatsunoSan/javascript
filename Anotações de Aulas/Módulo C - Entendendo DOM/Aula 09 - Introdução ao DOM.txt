@@ -1,0 +1,177 @@
+O que é DOM? Document Object Model. Modelo de Objetos para Documentos.
+Basicamente é um conjunto de objetos dentro do seu navegador que vai dar acesso aos componentes internos do seu WEBSITE. O DOM não funciona dentro do NodeJS. Ele está presente quando rodamos Javascript dentro do navegador.
+
+Uma coisa importante que devemos conhecer e saber fazer é a Árvore DOM do nosso website. Basicamente a árvore DOM começa da raiz, e essa raiz dentro do navegador chamamos de "window". Então aquela janela do navegador é um objeto DOM e se chama window, ou janela.
+
+Dentro do window temos vários outros objetos. Como por exemplo esses 3:
+window:
+	location: Que diz qual é a localização do site, a URL, qual a página atual, qual a página anterior.
+	
+	document: Que a gente vai usar bastante, que é o documento atual
+
+	history: Que vai guardando de onde você veio, pra onde você vai e isso facilita a navegação dentro do site.
+	
+Dentro do document no nosso caso, existe um outro objeto muito importante: o HTML.
+Dentro de HTML temos dois objetos, dois filhos que é como se chamam, ou child: O "head" e o "body". Quem estiver imediatamente acima é parent, pai ou mãe, e quem estiver abaixo é child.
+window:
+	location:
+	document:
+		html:
+			head:
+			
+			body:
+			
+			
+ou seja, window é parent, e o location, document e history são os child, que por sua vez também tem seus próprios childs... e assim vai.
+Sim, é uma Árvore Hierárquica ou genealógica.
+
+A árvore hierárquica do arquivo html "ex005.html" da Aula 09 - Introdução ao DOM pra essa aula é a seguinte:
+
+window:
+	location:
+	document:
+		html:
+			head:
+				meta:
+				title:
+			body:
+				h1:
+				p:
+				p:
+					strong:
+				div:
+	history:
+
+É possível navegar dentro dessa árvore da maneira que eu achar melhor, e pra isso existem várias maneiras de navegar entre elementos.
+Elemento é toda e qualquer coisa que aparecer na árvore DOM. E é possível selecionar os elementos para navegar dentro da árvore DOM.
+Existe vários métodos para isso, mas hoje nos manteremos em 5:
+	por Marca, TAG no caso
+	por ID
+	por Nome
+	por Classe
+	por Seletor, por CSS no caso, que é um recurso mais recente.
+	
+Como seleciona por Marca?
+O comando é esse:
+getElementsByTagName() - Consigo selecionar mais de um objeto.
+	Como selecionar os objetos? Crio uma variável com o seguinte código:
+	
+	<p>Aqui vai o resultado</p>
+	<p>Aprendendo a usar o <strong>DOM</strong> em Javascript.</p> 	//Motivo de contexto. Esses são os parágrafos que estão dentro do <body>.
+	
+	
+	/*Mas como eu devo saber, temos duas TAG's "p", dois parágrafos. Para eu selecioanar um ou outro, eu coloco um número "x" referente àquela tag, entre "[]". E é aquilo, 0 é o primeiro, o segundo é 1, e assim por diante.
+	*/
+////////////////////////////////////////
+A partir daqui está dentro do <script>.
+////////////////////////////////////////		
+	var p1 = window.document.getElementsByTagName('p')[0];
+	
+	/*Ok. Selecionei a parada. Peguei o Bagulho, e agora? Agora posso fazer com que apareça na tela.*/
+	
+	window.document.write(p1.innerText); //innerText é o TEXTO da parada Ou seja, não vai vir em negrito, ou formatadozin, vai ser só o texto mesmo.
+	
+Da até pra Concatenar:
+	window.document.write('Está escrito assim: ' + p1.innerText);
+	
+	Esse numerozinho entre "[]" vai ser usado principalmente quando tiver no PLURAL (getElement*S*By...)
+
+Dá pra fazer diversas coisas com a parada selecionada. Mudar a cor, a fonte, e muitas outras paradas
+A cor:
+
+	p1.style.color = 'blue'	//O parágrafo que já estava escrito no site antes do código anterior, ficará azul.
+
+	E ainda posso criar uma variável pro corpo do site:
+	var corpo = window.document.body
+	corpo.style.background = 'black'	//A página do site ficará preta.
+
+Como eu disse anteriormente, "document.write(p1.innerText)" pegará SÓ O TEXTO, e como no p2 há a tag "<strong>", isso significaria que o "DOM" ficaria em negrito. Para pegar com código e tudo, a gente utiliza:
+	document.write(p1.innerHTML)
+
+	Mas se eu transformar esse "write" em "alert", no alerta vai mostrar os código utilizados, além de não estar formatado. Literalmente assim:
+		Aprendendo a usar o <strong>DOM</strong> em Javascript.
+	Nesse caso e em outros, É NECESSÁRIO usar o "innerText" invés de "innerHTML"
+	
+
+
+
+Eu também posso selecionar objetos, quando meu site for um pouco mais evoluído, por ID por exemplo.
+Eu posso identificar um parágrafo ou uma div por uma ID.
+
+
+Como seleciona por ID?
+getElementByID() 	//Perceba que não tem plural.
+
+
+
+Eu também posso selecionar um objeto pelo nome, "by name", se eu tiver uma propriedade "NAME"
+Quando eu tenho muitos objetos da mesma classe, do mesmo nome, eu vou usar muito por MARCA e também por NOME (NAME)
+
+Como seleciona por Nome?
+getElementsByName()		//Perceba o plural. "[]" talvez necessário caso mais de um objeto.
+
+
+
+Também posso usar como conjunto por Classe.
+Em vez de usar o getElementsByName que as vezes pode ser muito genérico caso tenhamos muitas tags <div>, eu dou um ID pra div. How?
+
+usamos de exemplo a div (que fica dentro do <body>):
+	<div>Clique em mim</div> virará		>		<div id="msg">Clique em mim</div> 	
+
+q lind, e pra selecionar? Dentro do <script>:
+	var d = window.document.getElementByID('msg'); //Div selecionada. A ID dela é "msg".
+	e agora, podemos personalizar:
+	
+	d.style.background = 'green'	//O fundo do texto da div ficará verde
+	
+	d.innerText = 'Estou aguardando...' 	//Agora, o conteúdo não é mais "clique em mim", 'Estou aguardando...' além de continuar com o background verde do último código.
+
+	Mas se eu quiser, posso simplesmente usar o comando completo em vez do comando anterior:
+	
+	window.document.getElementById('msg').innerText = 'Olá!'
+	mas claro, simplificar é sempre preferível
+	posso mudar o <div id='msg'> por <div name='msg>' e fazer códigos parecidos que também funcionará, e claro, usando getElementsByName...
+
+Como selecionar por Classe?
+getElementsByClassName()
+
+	por classe vc altera a div e colocar "class='msg'", e aí "getElementsByClassName..."
+	
+	
+a FORMA DE ACESSAR É A QUE EU PREFIRO! Dependendo de uma situação pode ser uma, dependendo de outra situação, pode ser outra, se nao for uma situação específica, é a que eu escolher...
+	
+
+
+
+
+Como selecionar por Seletor (CSS)? A mais recomendada aparentemente:
+querySelector()
+querySelectorAll()
+	<div id="msg">Clique em mim</div>
+	var d = window.document.querySelector('div#msg')
+
+TODA DIV É REPRESENTADA POR "#"!
+TODA CLASSE É REPRESENTADA POR "."!
+
+	d.style.color = 'blue';
+ou background
+	d.style.background = 'blue';
+	
+	E aí se for uma classe, nós alteramos o "id" por "class" e a "#" por "."
+	<div class="msg">Clique em mim</div>
+	var d = window.document.querySelector('div.msg')
+	
+Percebe que ele é mais prático pra alterações mais rápidas no site?
+Lembrando que ele é um método mais recente, ou seja, navegadores mais antigos podem ser que não tenham suporte a ele ainda. Mas se estiver tudo atualizadinho, ta safe.
+
+
+
+
+
+
+
+Primeiramente, instalaremos o Live Server e o Noje.js Exec no VSCode. 
+O Live Server vai criar um server nosso pro nosso arquivo html e vai atualizar automaticamente conforme nós vamos modificando nosso arquivo.
+O Node.js Exec permite que executemos nosso código apertando F8 no Node JS 
+
+

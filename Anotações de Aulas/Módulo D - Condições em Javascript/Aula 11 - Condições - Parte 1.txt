@@ -1,0 +1,97 @@
+Sequências:
+
+var n = 3
+
+n += 2
+
+window.alert(n)
+
+Autoexplicativo, certo?
+
+Imagine que isso é um pequeno projeto seu que você criou. É impossível executar o terceiro comando sem executar os dois anteriores. Muito menos é possível mudar a ordem em que eles serão executados.
+
+Pode ser que exista horas que você queira executar o segundo, e horas que você queira executar o terceiro.
+
+Pra isso, nós utilizamos de condições.
+
+Condições:
+
+Imagine que essa sequência é uma estrada, e chegamos num determinado ponto da estrada que há uma bifurcação. 
+
+Ambas as bifurcações dão no mesmo fim de estrada, mas talvez eu queira ir pela estrada que passe pela floresta por eu gostar do ambiente ou eu passe pela estrada que simplesmente é mais rápida caso eu tenha pressa ou não queira passar pela floresta por n motivo.
+
+Como representar isso na programação?
+
+
+
+
+If (condição) {
+	
+	true
+	
+} else {
+
+false
+
+}
+
+
+Você deve ter percebido que parte do código meio que ta no meio, né? O nome disso é IDENTAÇÃO. Recuo. Mais na frente eu explico.
+
+
+Tipos de condição:
+
+Existem 2 tipos de condição:
+
+A condição simples, que só há 1 tipo de bloco, o bloco verdadeiro:
+
+if (condição) {
+
+	true
+	
+}
+
+Nessa simples, se a condição for falsa, nada em especial acontecerá, o programa seguirá normalmente.;
+
+
+
+if (condição) {
+
+	true
+	
+} else {
+
+	false
+
+}
+
+
+Agora, sem encenação:
+
+var vel = 59
+console.log(`A velocidade do seu carro é ${vel}KM/h`)
+if (vel > 60) {
+	console.log('Você ultrapassou a velocidade permitida. MULTADO!')
+}
+console.log('Dirija com segurança. Use sempre o cinto!')
+
+ISSO é uma condição simples.
+
+SE a velocidade do motorista for MAIOR que 59, a mensagem de multa aparece, caso contrário, nada acontece e o programa segue normalmente.
+
+Um exemplo de condição complexa:
+
+
+var país = 'EUA'
+console.log(`Vive em ${país}`)
+if (país == 'Brasil') {
+	console.log('Você é brasileiro!')
+} else {
+	console.log('Você é estrangeiro!') 
+}
+
+
+SE o país dentro da variável for "Brasil", aparecerá a mensagem "você é brasileiro", SENÃO, aparecerá "Você é estrangeiro!"
+
+Vamos para um site. Abra o arquivo ex010.html que lá terá os comentários e explicações.
+

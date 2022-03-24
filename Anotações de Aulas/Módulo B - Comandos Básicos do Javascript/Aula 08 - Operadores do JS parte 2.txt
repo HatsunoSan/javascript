@@ -1,0 +1,157 @@
+Hoje, falaremos sobre os Operadores:
+	Relacionais
+	Lógicos
+e	Ternários.
+Os Operadores Relacionais são:
+	">"  - Maior			ex 5  > 2 = True
+	"<"  - Menor			ex 7  < 4 = False
+	">=" - Maior ou Igual	ex 8 == 8 = True
+	"<=" - Menor ou Igual	ex 9 <= 7 = False
+	"==" - Igual			ex 5 == 5 = True
+	"!=" - Diferente		ex 4 !  4 = False
+O que quer dizer esses "False"'s e "True"'s?
+
+Os operadores relacionais nos devolvem valores boleanos. No caso, True e False.
+se no Operador "==": 5 IGUAL a 5: nos devolverá True, 
+e se no operador "!=": 4 DIFERENTE DE 4: nos devolverá False
+
+pois 5 É IGUAL A 5 e 4 NÃO É DIFERENTE DE 4 (jura caralho?)
+
+Mas da um se ligue:
+Primeir o programa SEMPRE fará o Operador Aritmético primeiro, e depois o relacional.
+
+Com Operador relacional, nós também podemos comparar String:
+
+var Javascript = 'Javascript'
+var Python = 'Python 3'
+var JS = 'Javascript'
+var PT = 'Python 3'
+
+	
+Javascript == Python //Retornará "False"
+Javascript == JS 	 //Retornará "True"
+
+e a mesma coisa com os outros.
+
+Outra parada que existe é:
+
+Operador de IDENTIDADE
+
+5 == 5  	//True
+5 == '5'	//Também True. Pro Javascript, "5" é sim igual a "'5'", mesmo sendo String. Isso porque o sinal de igualdade NÃO TESTA O TIPO. Ele analisa o VALOR, ainda que de TIPOS diferentes.
+Mas existe o seguinte operador:
+
+5 === '5' 	//False. Esse sim leva em consideração o TIPO. Ele testa se são IDÊNTICOS. Mesmo valor, mesmo tipo.
+Lê-se "5 é IDÊNTICO a '5'"
+
+Existe também o "!=="
+que é a mesma coisa porém contrária
+
+5 != '5'  //False. o VALOR É O MESMO! Só o tipo é diferente.
+5 !== '5' //True. o TIPO É DIFERENTE! Só o valor é o mesmo.
+Lê-se "5 DESIGUAL RESTRITO A 5".
+
+
+Operadores Lógicos:
+	!  - Exclamação 				- Negação, "Não".
+		Ele é um operador UNÁRIO, só tem um operando.
+		Depois da exclamação, OU eu boto True, OU eu boto False, OU eu boto uma expressão que vai dar True OU que vai dar False.
+		
+		
+	&& - os dois E's comerciais		- Conjução, "e"
+		ex: Esse operador é Binário. Eu tenho dois valores lógicos, um de cada lado.
+		/*Eu quero uma caneta azul *E* outra vermelha.*/
+			true && true   > True. Eu consegui uma caneta azul E outra vermelha.
+			true && false  > False. Eu consegui a azul, e NÃO consegui a vermelha
+			false && true  > False. Eu NÃO consegui a azul, mas consegui a vermelha.
+			false && false > False. Não consegui nenhuma das duas
+		
+		
+	|| - os dois Pipes (alt + 124)	- Disjunção, "ou".
+	ex: Operador Binário também.
+		Quero uma caneta azul *OU* uma caneta vermelha. Basta que um dos dois seja verdadeiro.
+			true  || true  > true. Consegui ambas as canetas.
+			true  || false > true. Consegui a caneta azul, mas não a vermelha.
+			false || true  > true. Não consegui a caneta azul, mas consegui a vermelha.
+			false || false > false. Não consegui nenhuma.
+
+se liga no bug:
+
+var a = 5
+var b = 8
+
+true && false
+False			// a variável "a" e "b" sao verdadeiras, logo o operador retornou falso.
+true && true
+True.			// por ambas serem verdadeiras, retorna true.
+false || false	// variável Falsa OU Falsa.
+False.			// Ambas as variáveis tem algum valor, então, retorna falso.
+true  || false   
+True.			// Pelo menos um deles é verdadeiro, logo, True.
+true || true    
+True.			// Ambas as variáveis são verdadeiras.
+
+Mas o que você me diz disso:
+a > b && b % 2 == 0 // Lê-se: "a" maior que "b" E resto da divisão de "b" por 2 é igual a 0?
+COMO QUE FAZ ESSA PORRA?
+Primeiro fazemos todos os operadores aritméticos, depois os relacionais, e aí vem os lógicos.
+
+Primeiro o b % 2 == 0 // 8 dividido por 2 resta 0. Ou seja, a divisão NÃO sobra nada, logo, esse bloco é verdadeiro. Se fosse 9, sobraria 1 e o bloco seria falso, pois o comando analisa se é igual a 0 ("== 0")
+a > b // 5 não é maior que 8. logo esse bloco é falso.
+voltando ao calculado do bagulho:
+a > b && b % 2 == 0:
+falso.				//Falso. pois "&&" requer que ambos sejam verdadeiros ou falsos. "a" (5) não é maior que "b" (8), logo o bloco é falso. "b" (8) resto da divisão por 2 é igual a 0? Sim, logo esse bloco é verdadeiro.
+
+
+
+outra parada:
+
+a <= b || b / 2 == 2:
+true.				 //com "||", basta que um dos lados seja verdadeiro.
+
+
+
+E essas paradas também tem ordem de precedência mané, pois é. Foda.
+Se liga:
+	"!"  - Primeiro o NÃO
+	"&&" - depos o "E"
+	"||" - depois o "OU"
+	
+como fazer os bangs no javascript? assim:
+
+idade >= 15 %% idade <= 17 		//A idade está entre 15 e 17?
+estado == 'RJ' || 'SP'			//O estado é RJ OU SP?
+salário > 1500 && sexo != 'M'	//O salário é maior que 1500 E o sexo é diferente de masculino? 	
+
+
+OPERADOR TERNÁRIO!
+"?:"
+o que fica no meio é o que vai acontecer se o teste for verdadeiro, e no final o que acontece se for falso
+teste ? true: false 
+tendi porra nenhuma, e vc?
+nao?
+média >= 7.0?"aprovado":"reprovado"
+AINDA N ENTENDIRKKKKKKKKKKKKKK SOCORR
+
+testa no node viado, sério bgl ficou foda agora da pra fazer aqui não
+
+var média = 5.5
+média > 7?'APROVADO':'REPROVADO'
+'REPROVADO'
+média += 3
+8.5
+média > 7?'APROVADO':'REPROVADO'
+'APROVADO'
+
+pra quem manja de python lembra um pouco de if else e elif.
+
+outro:
+x = 8
+var res = x % 2 == 0 ? 5: 9 // "x" resto da divisão por 2 é igual a 0? Sim. Então, a variável vai receber 5. Se o resto fosse diferente de 0, a variável teria o valor 9
+
+var idade = 19
+19
+var r = idade >= 18 ? 'MAIOR' : 'MENOR'
+r
+'MAIOR'
+//var r = idade maior ou igual a 18? recebe 'MAIOR' senão 'MENOR'
