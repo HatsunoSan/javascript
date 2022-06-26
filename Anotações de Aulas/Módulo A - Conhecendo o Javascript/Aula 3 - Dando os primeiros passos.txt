@@ -1,6 +1,0 @@
-Bibliografias para aprender:
-Livros -
-Javascript - O Guia Definitivo
-Javascript - Guia do Programador
-Guia de Referência da ECMA
-Guia de Referência da Mozilla

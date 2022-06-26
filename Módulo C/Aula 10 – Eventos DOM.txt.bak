@@ -1,0 +1,79 @@
+Vamos falar sobre eventos!]
+
+Evento é tudo aquilo que possa acontecer com uma div!
+
+O mais comum são eventos de mouse. Por exemplo, o mouse entrar na div, e um evento disparar.
+Você clicar, e algo acontecer com a div, como trocar a cor. 
+Eventos de mouse:
+	mouseenter
+		o mouse entrar na área
+	mousemove
+		o mouse se movimentar na área
+	mousedown
+		segurar o click
+	mouseup
+		ao soltar o botão do mouse
+	click
+		ao clicar na div
+	mouseout
+		ao sair da área da div
+		
+Existem outros eventos, muitos outros eventos que podem acontecer.
+
+Para disparar eventos, temos que saber o que são Funções.
+
+
+Função em JS é um conjunto de códigos, de linhas, que vão ser executados só quando o evento ocorrer.
+ex, vou programar 10 linhas, essas 10 linhas eu vou chamar de BLOCO. Essas 10 linhas não vão ser executadas automaticamente, igual todos os outros códigos que digitamos até aqui.
+Agora, essas 10 linhas só vão ser executadas quando eu CLICAR DENTRO DA DIV por exemplo. E aí, sei lá, a cor do texto ou a cor do fundo dele altera.
+
+Um bloco no JS, é delimitado entre chaves {bloco}.
+Esse bloco você tem que nomear como function antes do bloco:
+	function {		//Isso na verdade é uma função anônima. Uma função que não tem nome
+			bloco
+		}
+	
+Só que, para que o método funcione, temos que dar um nome à essa função, e geralmente os nomes das funções são ações que podemos fazer:
+function ação() {
+		bloco
+	}
+	
+E opcionalmente, você pode colocar dentro dos parênteses alguns parâmetros: 
+function ação(param) {
+		bloco
+	}
+	
+Os eventos podem ser configurados na parte HTML ou no Javascript, você escolha qual é o melhor.
+Via HTML:
+	<div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+E aí a partir daqui eu tenho que criar 3 functions no script e escrever o que vai acontecer ao clicar, ao entrar na área, e ao sair:
+	function clicar() {		//Ao clicar, a cor mudará e o texto também
+		area.style.background = 'crimson'
+		area.innerText = 'Olá, Mundo!'
+	}
+	function entrar() {		//Ao entrar na área, o texto mudará
+		area.innerText = 'Entrou!'
+	}
+	function sair() {		//Ao sair da área, o texto mudará e a cor também
+		area.innerText = 'Saiu!'
+		area.style.background = 'purple'
+	}
+
+Via Javascript:
+	em vez de "poluir" o HTML com os eventos, nós o configuramos no Javascript assim:
+		var area = window.document.querySelector('div#area')	//Selecionamos a div...
+		
+		area.addEventListener('click', clicar)
+		area.addEventListener('mouseenter', entrar)
+		area.addEventListener('mouseout', sair)
+	E aí, coloquemos as linhas de functions apresentadas após o método via HTML.
+	
+	
+Agora, algo que pode vir a acontecer bastante, são erros de digitação. Se você errar algum comando no código, o JS não vai te dar o erro no código. como descobrir? 
+
+Na maioria dos casos, é só dar um F12 e abrir o devtools no navegador e ir na aba console
+
+Lá, se houver algum erro, ele vai dizer em que linha do documento HTML o erro se encontra.
+
+
+		De repente ficou muito complexo, abra o arquivo que há até mesmo explicações lá.

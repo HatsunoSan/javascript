@@ -1,0 +1,116 @@
+Vamos falar sobre variáveis no Javascript.
+
+Na aula anterior, nós aprendemos 3 códigos: 
+window.alert(); window.prompt(); window.confirm();
+
+mas independente de qual seja a escolha ou o que foi digitado, a informação não foi salva e não vai poder ser manipulada de forma alguma. E é para isso que serve as variáveis. Podemos pegar o que o usuário inputa e salvar em uma variável para utilizar depois.
+
+Assim como em outras linguagens de programação, há comentários em javascript:
+
+// - comentário de 1 linha
+/*xyz*/ - comentário de mais de 1 linha
+
+Imagine que você tem um terreno e quer transformar em um estacionamento. Ou seja, você quer que automóveis estacionem ali, mas você não pode colocar no foda-se porque se não fica uma bagunça. E o que você vai fazer então? Delimitar, marcar vagas de estacionamento.
+Então, você coloca identificações. Vamos dizer que são 6 vagas:
+
+De a1 à a6.
+
+O grande problema, é que caso apareça um caminhão ou uma caminhonete muito grande, pode ser que alguma vaga não seja grande o suficiente.
+
+Então a gente organiza o terreno e adiciona 4 vagas de caminhão/caminhonete:
+
+De c1 à c4.
+
+Aproveitamos e adicionamos 6 vagas de moto, já que estávamos organizando mesmo:
+
+De m1 à m6.
+
+Basicamente, o que a gente fez no nosso terreno foi organizar espaços específicos para diversos tipos de automóveis, e a partir daí eu posso ir preenchendo as vagas.
+Vamos supor que temos um sistemazinho robusto de registro de vagas que funciona assim:
+
+O cliente vem e paga, temos as informações necessárias para identificar o carro, como ele vai ficar registrado no sistema?
+
+vaga a1 = carro1	// UM sinal de "=" significa RECEBE.
+
+
+E aí chega um outro carro, mas que ele também quer ficar na vaga a1. Obviamente não dá pra ficar os dois, então trocamos o carro no registro
+
+a1 = carro2 		// lê-se "a1 recebe carro2"
+
+eventualmente a vaga vai ficar vazia e temos que atualizar o sistema. Como esvaziamos a vaga no sistema?
+
+a1 = null			// "null" de nulo
+
+Esse terreno nosso, na verdade, é o computador, a memória do computador.
+
+As vagas de estacionamento que representamos ali, são na verdade, as variáveis.
+
+e os carros, as informações que salvamos nas variáveis.
+
+as vagas, no javascript são representadas como "var" e "let". Mas hoje é recomendado a utilização de "let":
+MAS IMPORTANTE!
+
+
+É possível alterar uma variável escrita com var, mas não uma escrita com let. Como assim?
+
+var n1 = 217
+se eu fizer isso:
+var n1 = 'Wolly'
+Vai dar certo, e a variável n1 vai ter salvo "Wolly"
+
+com let isso daria erro.
+
+let n1 = 5
+let n2 = 8.5
+let n3 = 15
+
+^ As variáveis n1, n2 e n3 têm salvas respectivamente 5, 8.5 e 15. Isso nós damos o nome de atribuição.
+
+
+Nas variáveis podemos colocar também palavras.
+
+let s1 = "Javascript"
+let s2 = 'Curso em Vídeo'
+let s3 = ´Wolly´
+
+Quando são palavras ou frases salvas, nós chamamos de Strings.
+Perceba também que as strings todas estão dentro de aspas, e cada uma com uma aspas diferentes.
+Isso tem diferença no JS. Cuidado. Mais pra frente aprenderemos.
+
+O nome da variável, nós chamamos de Identificadores. E há algumas regras para isso:
+
+1 Regra = Podem começar com letras, $ ou _
+2 Regra = Não podem começar com números
+3 Regra = É possível usar letras ou números
+4 Regra = É possível usar acentos e símbolos
+5 Regra = Não podem conter espaços
+6 Regra = Não podem ser palavras reservadas 
+	Por exemplo, nao posso dar o nome de uma variável de var ou let, ex:
+		var let = 5
+		palavras que são reservadas, são palavras de comandos resumindo.
+Vamos treinar agora no NodeJS
+
+O NodeJS tu pode usar simplesmente abrind o programa, ou utilizar ele no VSCode:
+terminal > novo terminal e escreva node
+
+pra sair em ambos os casos é só digitar .exit, mas no vscode voce pode clicar no simbolo de lixeira também.
+
+Veja na pasta a imagem "Tipos Primitivos Primordiais" para ver o que pode ser salvo em variáveis!
+
+Nós vamos focar bastante nesses 3 da imagem. Mas no JS tem muitos outros.
+
+Veja a imagem Data Types!
+
+tem um comando chamado typeof que diz que tipo primordial aquela viarável tem salvo.
+
+let n1 = 217
+
+typeof n1
+	'number' // Diz que é um número.
+	
+mas se a gente fizer isso:
+
+let n1 = 'Wolly'
+
+typeof n1
+	'string'	// Diz que é uma string.

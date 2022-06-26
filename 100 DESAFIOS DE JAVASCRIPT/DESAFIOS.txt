@@ -1,0 +1,10 @@
+https://www.youtube.com/watch?v=nIHq1MtJaKs&list=PLHz_AreHm4dm6wYOIW20Nyg12TAjmMGT-
+
+Leia o enunciado e faça em javascript xD
+
+Para criar várias pastas de uma vez: 
+cmd em admin;
+"cd C:\Users\licon\Documents\_Estudos\javascript\100 DESAFIOS DE JAVASCRIPT" > enter;
+"md nomedapasta1 nomedapasta2 nomedapasta3 nomedapasta4[...]" > enter;
+
+

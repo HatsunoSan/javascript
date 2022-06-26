@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu primeiro programa!</title>
+    <style>                                             /*  Comentário em CSS3, também em JS. 
+                                                            Múltiplas linhas. */
+        body {
+            background-color: rgb(105, 105, 173);
+            color: wheat;
+            font: bold 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Já me livrei da maldição!</p>                    <!-- Comentário em HTML5 -->
+    <script>
+    /*
+    var n1 = window.prompt('Digite um número: ')    // Retornando string
+    var n2 = window.prompt('Digite outro número: ') // Retornando string
+    */
+
+    /*var n1 = Number.parseInt(window.prompt('Digite um número: '))       // Convertendo resultado em Inteiro
+    var n2 = Number.parseInt(window.prompt('Digite outro número: '))    // Convertendo resultado em Inteiro.
+    var soma = n1 + n2
+    */
+
+    var n1 = Number(window.prompt('Digite um número: '))        // JS se vira pra somar em inteiro ou real.
+    var n2 = Number(window.prompt('Digite outro número: '))
+    var soma = n1 + n2
+    // window.alert('A soma dos valores é ' + String(soma))        // Converte em String novamente.
+    window.alert(`A soma entre ${n1} e ${n2} é é ${soma}!`)                  // Template string pra facilitar!
+    // string + string para concatenação
+    // number + number para adição
+    </script>
+</body>
+</html>

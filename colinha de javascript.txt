@@ -1,0 +1,193 @@
+alt 96 = 	`	// crase invertida
+alt 92 = 	\	// barra invertida
+alt 124		|	// barra vertical
+
+
+
+
+var n1 = Number.parseInt(window.prompt('Digite um número: ')) 	// converte o resultado pra inteiro
+
+var n1 = Number.parseFloat(window.prompt('Digite um número: '))	// converte o resultado pra float
+
+var n1 = Number(window.prompt('Digite um número: '))		// JS se vira pra converter
+
+var n1 = String(window.prompt('Digite um número: '))		// converte para String (desnecessariamente, pq prompt ja retorna string)
+
+n.toString() ou String()					// Se o resultado já for um número, converte para String
+	window.alert('A soma dos valores é ' + String(soma))		// exemplo
+
+
+${NomeDaVariável}						// Facilitar a formatação sem utilizar concatenação.
+
+x.lenght 							// quantos caracteres a string tem
+x.toUpperCase()							// tudo para MAIÚSCULAS
+x.toLowerCase()							// tudo para MINÚSCULAS
+
+n.toFixed(x)							// Se eu quiser alterar as casas decimais do número real
+	n1 = 1545.5
+	n1.toFixed(2)
+		1545.50
+
+
+ALTERAR . POR VÍRGULA USANDO REPLACE!
+	n1.toFixed(2).replace('.' , ',')
+		1545,50
+
+
+finja que é um salário, como mostrar em real?
+	n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+		R$ 1.545,50
+	n1.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})
+		US$ 1.545,50
+
+		
+==================================== OPERADORES RELACIONAIS ===================================
+5	> 	2	maior				True
+7 	< 	4	menor				False
+8 	>= 	8	maior ou igual		True
+9 	<=	7	menor ou igual		False
+5	==	5	igual				True	// O operador de igualdade. " = " significa recebe.
+4	!=	4	diferente			False
+
+E também existe o Operador de Identidade.
+
+5	== 	5		True
+5	==	"5"		True	// ué?.
+	O Javascript quando compara, não se importa com que tipo é. Se é string, se é numero... 5 É diferente de '5'? Sim. 
+	Mas pro Javascript, eles têm a mesma grandeza.
+	
+5	===	"5"		False	// Esse é o operador de IDENTIDADE. Ele procura saber se os valores são IDÊNTICOS ou não. Ou seja, se é do mesmo valor, E do mesmo tipo.
+
+E assim como o Idêntico, há o DESIGUAL RESTRITO.
+QUE?
+Ora, faz o mesmo que o idêntico, mas ao contrário.
+
+5 	!=		"5"		false	
+5	!==		"5"		true
+
+Exemplos:
+idade >= 15 && idade <= 17			// a idade está entre 15 e 17?
+estado == "RJ' ││ estado == "SP"	// o estado é RJ ou SP?
+salário > 1500 && sexo != "M"		// o salário é maior que 1500 e o sexo não é masculino?
+
+=========================================================== DOM =============================================================================
+
+selecionar algo:
+	body do html por ex:
+		var corpo = window.document.body
+			alterar cor dele:
+				corpo.style.backgroundColor = 'black'
+		
+		
+		alterar sem selecionar na variável:
+		window.document.body.style.backgroundColor = 'alguma cor aqui'
+
+	p do html via MARCA:
+		var p1 = window.document.getElementsByTagName('p')[0]
+			mandar mostrar na tela:
+				document.write(p1.innerText) (se tiver alguma outra tag como strong, utilizar innerHTML pra mostrar formatado no caso)
+			mostrar em alert:
+				window.alert(p1.innerText)
+Horário atual do sistema:
+var data = new Date()		//Capturar informações atuais do sistema
+var hora = data.getHours()	//salvando a HORA, nao os minutos
+
+CRIAR ELEMENTO!
+ 
+Por exemplo, uma foto:
+
+	var imagem = document.createElement('img')			//É como se tivesse criado uma tag <img> no html.
+	
+	imagem.setAttribute('id', 'foto')					//Aqui estou dando um id à tag criada previamente.
+	
+	imagem.setAttribute('src', 'menino-criança.jpg')	//Aqui estou manipulando mexendo nas propriedades da tag. Perceba as semelhanças na manipulação entre js e html.
+	
+IMPORTANTE!!!
+	
+	var resultado = window.document.querySelector('#res')
+	...
+	resultado.innerHTML = `Detectamos ${sexo} com idade de ${idade} anos`
+	resultado.appendChild(imagem)	//Isso aqui faz com que o elemento que criamos, vire children da div res, fazendo assim com que eventualmente apareça na página juntamente da mensagem acima.
+
+
+QUERY SELECTOR
+
+As vezes vc quer usar querySelector + combinators a partir de um elemento em JS, ex
+
+elem.querySelector('> div:first-child');
+
+Não dá pq '> ...' não é um seletor válido. 
+Mas vc pode fazer:
+
+elem.querySelector(':scope > div:first-child');
+
+Pra procurar '> div:first-child' em elem
+
+
+===================================================== EVENTOS DOM =============================================================================
+LISTA DE EVENTOS //em processo de tradução
+https://developer.mozilla.org/pt-BR/docs/Web/Events
+
+
+mouseenter
+		o mouse entrar na área
+	mousemove
+		o mouse se movimentar na área
+	mousedown
+		segurar o click
+	mouseup
+		ao soltar o botão do mouse
+	click
+		ao clicar na div
+	mouseout
+		ao sair da área da div
+
+
+
+
+Via HTML:
+	<div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+	<script>
+		var area = window.document.querySelector('div#area')
+	...
+Via Javascript:
+<script>
+	var area = window.document.querySelector('div#area')
+	area.addEventListener('click', clicar)
+	area.addEventListener('mouseenter', entrar)
+	area.addEventListener('mouseout', sair)
+...
+
+Escolher um dos métodos, e aí chama as funções:
+...
+	function clicar() {
+		area.style.background = 'crimson'
+		area.innerText = 'Olá, Mundo!'
+	}
+	function entrar() {
+		area.innerText = 'Entrou!'
+	}
+	function sair() {
+		area.innerText = 'Saiu!'
+		area.style.background = 'purple'
+	}
+</script>
+	
+============================================================= CONDIÇÕES ====================================================================
+CONDIÇÃO SIMPLES:
+	if (condição) {
+		bloco
+	}
+
+
+
+CONDIÇÃO COMPLETA/COMPOSTAS:
+	if (condição) {
+		bloco
+	} else {
+		bloco
+	}
+
+
+
+

@@ -1,0 +1,50 @@
+Falaremos agora sobre Operadores relacionais!
+==================================== OPERADORES RELACIONAIS ===================================
+5	> 	2	maior				True
+7 	< 	4	menor				False
+8 	>= 	8	maior ou igual		True
+9 	<=	7	menor ou igual		False
+5	==	5	igual				True	// O operador de igualdade. " = " significa recebe.
+4	!=	4	diferente			False
+
+Seja qual for os dados atribuidos na utilização desses operadores acima, o resultado sempre será do tipo Boleano, ou seja, True ou False.
+
+Também podemos averiguar se strings são iguais ou diferentes.
+
+E também existe o Operador de Identidade.
+
+5	== 	5		True
+5	==	"5"		True	// ué?.
+	O Javascript quando compara, não se importa com que tipo é. Se é string, se é numero... 5 É diferente de '5'? Sim. Mas pro Javascript, eles têm a mesma grandeza.
+	
+5	===	"5"		False	// Esse é o operador de IDENTIDADE. Ele procura saber se os valores são IDÊNTICOS ou não. Ou seja, se é do mesmo valor, E do mesmo tipo.
+
+E assim como o Idêntico, há o DESIGUAL RESTRITO.
+QUE?
+Ora, faz o mesmo que o idêntico, mas ao contrário.
+
+5 	!=		"5"		false	
+5	!==		"5"		true
+
+===================================== OPERADORES LÓGICOS ==================================
+!	negação		quero uma caneta e ela NÃO PODE SER AZUL.	Fico satisfeito se não for azul.
+&&	conjunção	quero uma caneta azul E UMA vermelha		Fico satisfeito se receber as duas.
+││	disjunção	quero uma caneta azul OU uma vermelha		Fico satisfeito com as duas, ou 1 delas.
+
+Exemplos:
+idade >= 15 && idade <= 17			// a idade está entre 15 e 17?
+estado == "RJ' ││ estado == "SP"	// o estado é RJ ou SP?
+salário > 1500 && sexo != "M"		// o salário é maior que 1500 e o sexo não é masculino?
+
+E claro, também há precedência. Veja a imagem precedência master
+
+
+==================================== OPERADOR TERNÁRIO =====================================
+
+? 
+:
+	teste?true:false
+	media >= 7.0 ? "Aprovado" > "Reprovado "
+Veja a imagem exemplo ternario
+
+

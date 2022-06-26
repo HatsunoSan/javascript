@@ -1,0 +1,22 @@
+O Javascript possui várias familias de operadores.
+Mas falaremos das seguintes:
+
+	aritméticos
+	atribuiçao
+	relacionais
+	logicos
+	ternario
+E focaremos nos dois primeiros.
+=========================== ARITMÉTICOS ====================================================
+5 +  2 = 7		adição
+5 -  2 = 3		subtração
+5 *  2 = 10		multiplicação
+5 /  2 = 2.5	divisão
+5 %  2 = 1		resto da divisão INTEIRA
+	// 5 / 2 = 2. 
+		2*2 = 4.	Quanto faltou para chegar em 5 ? Faltou 1
+			Resultado: Resta 1
+5 ** 2 = 25		ao quadrado
+
+ASSIM COMO NA MATEMÁTICA, NA PROGRAMAÇAO TAMBÉM HÁ A ORDEM DE PRECEDÊNCIA!
+veja a imagem precedência na pasta

@@ -1,0 +1,84 @@
+Vamos aprender a manipular os dados do usuário!
+
+Mas eaí, qual a diferença entre var, let e const? Calma que a gente chega lá. Um dia. Não agora.
+
+window.prompt('Qual é o seu nome?') // A gente vai jogar o dado escrito dentro desse comando, para dentro de uma variável. Como?
+
+	var nome = window.prompt('Qual é o seu nome?')
+		A variável nome, recebe resultado do prompt.
+		
+E agora, pra fazer aparecer?
+	window.alert('É um grande prazer em te conhecer, ' + nome)
+		Fora das aspas, pré-seguido de " + ".
+		Esse sinal de " + ", significa CONCATENAÇÃO
+		
+Pra somar é fácil né? Duas variáveis pedindo número, mais uma somando, um alert pra mostrar...
+Mas se tu somar usando " + ", vai CONCATENAR, não somar.
+
+	 string + string para concatenação
+     number + number para adição
+	 
+window.prompt retonar uma STRING, ainda que tu digite um número qualquer.
+É necessário converter de string para número.
+Existe inúmeras formas:
+	Number.parseInt(n)		// converte para um número inteiro
+	Number.parseFloat(n)	// converte para um númerio real ( 5.5, 6.9...)
+
+Você pode colocar eles na frente do prompt e entre parenteses pro resultado ja sair convertido.
+	var n1 = Number.parseInt(window.prompt('Digite um número: '))
+	
+
+Você pode só colocar Number também. Imagina o usuário digitar um número real, quando era pra ser inteiro e zoar todo o esquema? Pois é. Também não dá pra ficar alterando o código sempre também.
+	var n1 = Number(window.prompt('Digite um número: '))
+	
+E de Number pra String?
+	var n1 = String(window.prompt('Digite um número: '))
+OU
+	n.toString()
+	
+	
+================================ FORMATANDO STRING ==========================================
+
+Se eu fizer isso daqui:
+var s = 'Javascript'
+'Eu estou aprendendo s' // Não vai mostrar o que está salvo em " s "
+Veja a imagem " formatando-errado " na pasta
+Neste caso, use de concatenação.
+
+Mas há outra forma também, mais moderna!
+Mas, antes, veja " formatando-errado-2 " na pasta.
+Concatenar não é a forma, fica até confuso.
+
+Usaremos de Template Strings!
+
+`Eu estou aprendendo $´{s}´
+veja a imagem " formatando-certo-template-string "
+
+É OBRIGATÓRIO ESSAS ASPAS: ``	// alt 96 = `
+								// alt 92 = \
+
+3 Coisas extras:
+
+s.lenght 				// quantos caracteres a string tem
+s.toUpperCase()			//tudo para MAIÚSCULAS
+s.toLowerCase()			// tudo para MINÚSCULAS
+
+mais pra frente a gente vai aprender fatiamento de strings.
+
+Abra o ex004.html
+Se você manja de HTML, saiba que as tags têm de estar dentro das crases e/ou aspas, mesmo que seja pra pular linha por exemplo
+
+
+A gente pode alterar as casas decimais também:
+n1 = 1545.5
+n1.toFixed(2)
+	1545.50
+
+Também podemos alterar aquele "." ali por uma vírgula, que é o que usamosa aqui no brasil:
+n1.toFixed(2).replace('.' , ',')
+	1545,50
+	
+Vamos supor que esse número fosse o salário de uma pessoa, como ia funcionar pra mostrar o real e tudo mais?
+
+n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+	R$ 1.545,50

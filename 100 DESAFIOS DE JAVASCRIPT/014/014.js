@@ -1,0 +1,1 @@
+//Escreva um programa que converta uma temperatura digitada em Cº e converta para Fº.

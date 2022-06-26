@@ -1,0 +1,36 @@
+Aprendemos a escolher dois caminhos, yay
+
+Mas não existe apenas dois.
+
+Vos apresento: Condições Aninhadas! Veja a image condições-aninhadas e condições-aninhadas2 na pasta do curso!
+
+if (cond1) {
+	bloco1
+} else {
+	if (cond2) {
+		bloco2
+	} else {
+		bloco3
+	}
+}
+
+Há também as condições múltiplas. Ela serve para valores FIXOS! veja a imagem condição-multipla
+
+
+
+switch (expressão) {
+	case valor1:
+		bloco
+		break
+	case valor2:
+		bloco
+		break
+	case valor3:
+		bloco
+		break
+	default:
+		bloco
+		break
+}
+
+Mas há um detalhezinho que PRECISA SER SEGUIDO! Sempre depois do último bloco nas condições fixas, é necessário um break!

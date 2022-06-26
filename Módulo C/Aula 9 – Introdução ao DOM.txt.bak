@@ -1,0 +1,37 @@
+DOM! O que é?
+
+DOM significa Document Object Model. Basicamente, um conjunto de objetos no seu navegador que vai dar acesso aos componentes internos do seu website.
+
+O DOM está presente quando eu to rodando Javascript no navegador.
+
+Uma coisa que temos que aprender a fazer é a árvore DOM do website.
+A árvore DOM começa da raiz, e essa raiz dentro do navegador, chamamos de "window", janela. Então tudo dentro do Javascript, está dentro de um objeto chamado window.
+				Nossa árvore DOM atualmente:
+				
+				
+							window					//Quem está acima é parent
+				location	document	history 	//Quem está imediatamente abaixo, é child
+							html					//html é child de document, que é seu parent, e q é child de window
+						head	body				//head e body sao child de html
+					meta,title	h1,p,p,div			//esses 4 sao child de body
+									 strong			//um dos p é parent de strong
+
+
+Então eu posso navegar dentro dessa árvore aí, da maneira que eu achar melhor. E pra isso existem várias maneiras de navegar entre elementos. Elementos são toda e qualquer coisa que aparecer nessa árvore DOM. Veja a imagem "arvore-dom-elementos" se não estiver claro.
+
+E eu posso selecionar esses elementos pra navegar dentro da minha árvore DOM.
+
+E são 5 métodos de acessos que será apresentado nessa aula:
+	por Marca
+		getElementsByTagName()	//via document. É possível selecionar mais de um objeto assim.
+		Por exemplo, temos duas tags p, é possível selecionar as duas! Como?
+			var p1 = window.document.getElementsByTagName('p')[0]	// 0 == primeira, 1 segunda...
+			E aí tu pode mandar mostrar com window.document.write(p1.innerText)
+			posso mudar o style depois de selecionar com: p1.style.color = 'blue'
+			posso selecionar O BODY assim: var corpo = window.document.body e mudar a cor assim:
+			corpo.style.background = 'black'
+	por ID
+	por Nome
+	por Classe
+	por Seletor
+		Por CSS, o mais recente Não tá presente em todas as versões do ECMAScript, mas na mais recente, todos os navegadores atualizados têm acesso a essa forma.
