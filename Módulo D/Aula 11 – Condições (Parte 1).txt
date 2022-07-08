@@ -1,0 +1,34 @@
+Vamos aprender sobre condições!!
+
+Todos os códigos que fizemos até hoje em Javascript, foram sequenciais.
+	var n = 3
+	n += 2
+	window.alert(n)
+Essa sequência de comandos, irão executar NESSA SEQUÊNCIA independente de tudo. Não existe "possibilidade" aí.
+
+Agora, aprenderemos a criar possibilidades. 
+Tal coisa tem esse resultado? 
+Sim? 
+Então tá bom, o programa continua. 
+
+Não? 
+Então acontece outra coisa.
+
+	Essa é a estrutura:
+		if (condição) {
+			bloco			//Se essa condição for true, então esse bloco é executado
+		} else {
+			bloco			//Se o bloco anterior for false, então esse bloco é executado.
+		}
+
+Mas existem dois tipos de condição! A anterior é a condição completa
+
+	if (condição) {
+		true
+	}
+	
+E essa é a condição simples. Nessa simples, se a condição for false, nada acontece. Vida que segue. Mas se for true, o bloco é executado.
+
+
+MAS, pra executar condições no Javascript, não é possível utilizar "window.document.[...]", é preciso usar uma outra extensão do VSCode: O NodeJS. Com ela instalado, nós usamos o seguinte comando para o programa ler o que escrevemos:
+console.log('O console funcionou corretamente') - E teclamos f8

@@ -1,17 +1,16 @@
 var agora = new Date()
 var diaSem = agora.getDay()
-
-/*
-    0 = Domingo
-    1 = Segunda
-    2 = Terça
-    3 = Quarta
-    4 = Quinta
-    5 = Sexta
-    6 = Sábado
+/* 
+    Domingo = 0
+    Segunda = 1
+    Terça   = 2
+    Quarta  = 3
+    Quinta  = 4
+    Sexta   = 5 
+    Sábado  = 6
 */
 
-
+console.log(diaSem)
 
 switch(diaSem) {
     case 0:
@@ -36,6 +35,6 @@ switch(diaSem) {
         console.log('Sábado')
         break
     default:
-        console.log('[ERRO!] Dia inválido!')
+        console.log('[ERRO] Dia inválido!')
         break
 }

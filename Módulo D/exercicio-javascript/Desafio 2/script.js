@@ -1,62 +1,46 @@
-var data = new Date()
-var SysAno = data.getFullYear()
+var anoAtual = (new Date()).getFullYear();
 
 function verificar() {
-    var UserAno = Number(window.document.querySelector('#txtano').value)
-    var idade = SysAno - UserAno
+    var nascimentoUsuario = Number(window.document.querySelector('#ano_nascimento').value)
+    var idade = anoAtual-nascimentoUsuario
 
+    var mensagem = window.document.querySelector('#msg')
+    var alteraIMG = window.document.querySelector('#imagem')
+    var sexo = window.document.getElementsByName('radsex')
 
-    if (idade < 0 || idade == SysAno) {
-        window.alert('[ERRO] Verifique novamente as informações.')
+    if (nascimentoUsuario == 0 || nascimentoUsuario < 0 || nascimentoUsuario > anoAtual) {
+        window.alert('[ERRO] Verifique as informações e tente novamente!')
     } else {
-        var resultado = window.document.querySelector('#res')
-        var radsex = window.document.getElementsByName('radsex')
-        sexo = ''
+        var genero = ''
 
-        var imagem = document.createElement('img')
-        imagem.setAttribute('id', 'foto')
-
-        if (radsex[0].checked) {
-            //Criança
-            sexo = 'Homem'
-            if (idade < 10) {
-                
-                imagem.setAttribute('src', 'menino-criança.jpg')
-            } else if (idade <= 18) {
-                //Jovem
-                imagem.setAttribute('src', 'jovem-h-adulto.jpg')
-            } else if (idade <= 45) {
-                //Adulto
-                imagem.setAttribute('src', 'homem-adulto.jpg')
+        if (sexo[0].checked) {
+            genero = 'Mulher'
+            if (idade <= 12) {
+                alteraIMG.setAttribute('src', 'crianca-menina.jpg')
+            } else if (idade < 18) {
+                alteraIMG.setAttribute('src', 'adolescente-garota.jpg')
+            } else if (idade <= 29) {
+                alteraIMG.setAttribute('src', 'jovem-adulto-mulher.jpg')
+            } else if (idade < 50) {
+                alteraIMG.setAttribute('src', 'adulto-mulher.jpg')
             } else {
-                //Idoso
-                imagem.setAttribute('src', 'homem-idoso.jpg')
+                alteraIMG.setAttribute('src', 'idoso-mulher.jpg')
             }
 
-
-
-            } else if (radsex[1].checked) {
-                //Mulher
-                sexo = 'Mulher'
-                if (idade < 10) {
-                    
-                    imagem.setAttribute('src', 'menina-criança.jpg')
-                } else if (idade <= 18) {
-                    //Jovem
-                    imagem.setAttribute('src', 'jovem-f-adulto.jpg')
-                } else if (idade <= 45) {
-                    //Adulto
-                    imagem.setAttribute('src', 'mulher-adulto.jpg')
-                } else {
-                    //Idoso
-                    imagem.setAttribute('src', 'mulher-idoso.jpg')
-                }
+        } else if (sexo[1].checked) {
+            genero = 'Homem'
+            if (idade <= 12) {
+                alteraIMG.setAttribute('src', 'crianca-menino.jpg')
+            } else if (idade < 18) {
+                alteraIMG.setAttribute('src', 'adolescente-garoto.jpg')
+            } else if (idade <= 29) {
+                alteraIMG.setAttribute('src', 'jovem-adulto-homem.jpg')
+            } else if (idade < 50) {
+                alteraIMG.setAttribute('src', 'adulto-homem.jpg')
+            } else {
+                alteraIMG.setAttribute('src', 'idoso-homem.jpg')
             }
-        resultado.innerHTML = `Detectamos ${sexo} com idade de ${idade} anos`
-        resultado.appendChild(imagem)
-    }
-    
-
-    
-    
+        }
+        mensagem.innerHTML = `Detectamos ${genero}, nascido em ${nascimentoUsuario} com ${idade} anos!`
+    } 
 }

@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacionalidade</title>
+    <title>Detran</title>
 </head>
 <body>
-    <h1>Registro de nacionalidade</h1>
-    Digite o país que você nasceu: <br>
-    <input type="text" name="nacionalidade" id="nacionalidade">
-    <input type="button" value="Registrar" onclick="clicar()">
-    <div id="registro">
-        Aguardando registro...
+    <h1>
+        Verificador de Nacionalidade
+    </h1>
+    Por favor, digite sua nacionalidade: 
+    <input type="text" name="nacion" id="nacio">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+        <p>Aguardando...</p>
     </div>
-    asdasasasd
+
     <script>
         
-        function clicar() {
-            var nacionalidade = window.document.querySelector('input#nacionalidade').value.toLowerCase()
-            if (nacionalidade == "brasil") {
-                registro.innerHTML = `<p>Você é Brasileiro!</p>`
+        function verificar() {
+            var pais = window.document.querySelector('input#nacio').value.toLowerCase()
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p>Seu país é ${pais}</p>`
+
+
+            if (pais == 'brasil') {
+                res.innerHTML += "Você é Brasileiro!"
             } else {
-                registro.innerHTML = `<p>Você é Estrangeiro!</p>`
+                res.innerHTML += "Você é Estrangeiro!"
             }
         }
-    
-        
     </script>
 
 </body>

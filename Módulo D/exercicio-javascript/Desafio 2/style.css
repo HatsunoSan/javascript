@@ -1,23 +1,32 @@
-body {
-    text-align: center;
-    font: normal 15pt Arial;
-
-    background-color: rgba(137, 43, 226, 0.548);
+* {
+    padding: 4px;
 }
+body {
+    background-color: rgb(133, 91, 167);
+    font: normal 15pt Arial;
+    text-align: center;
+}
+
 header {
     color: white;
+    
 }
+
 section {
     background-color: white;
+    border-radius: 10px;
+    padding: 9px;
     width: 500px;
-    border-radius: 8px;
     margin: auto;
-    padding: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.404);
 }
-img {
+
+#imagem {
     border-radius: 50%;
 }
+
 footer {
     color: white;
-    padding: 5px;
+    font-style: italic;
+    
 }

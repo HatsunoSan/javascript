@@ -13,6 +13,14 @@ var n1 = Number(window.prompt('Digite um número: '))		// JS se vira pra convert
 
 var n1 = String(window.prompt('Digite um número: '))		// converte para String (desnecessariamente, pq prompt ja retorna string)
 
+As vezes é necessário adicionar um ".value" pra informação digitada ser guardada. Ex:
+	Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+	[...]
+	var txtv = Number(window.document.querySelector('input#txtvel').value) // PRESTE ATENÇÃO NO .VALUE !
+
+var txtv = Number(window.document.querySelector('input#txtvel').value)
+
+
 n.toString() ou String()					// Se o resultado já for um número, converte para String
 	window.alert('A soma dos valores é ' + String(soma))		// exemplo
 
@@ -67,8 +75,8 @@ Ora, faz o mesmo que o idêntico, mas ao contrário.
 
 Exemplos:
 idade >= 15 && idade <= 17			// a idade está entre 15 e 17?
-estado == "RJ' ││ estado == "SP"	// o estado é RJ ou SP?
-salário > 1500 && sexo != "M"		// o salário é maior que 1500 e o sexo não é masculino?
+estado == "RJ' ││ estado == "SP"		// o estado é RJ ou SP?
+salário > 1500 && sexo != "M"			// o salário é maior que 1500 e o sexo não é masculino?
 
 =========================================================== DOM =============================================================================
 
@@ -82,7 +90,7 @@ selecionar algo:
 		alterar sem selecionar na variável:
 		window.document.body.style.backgroundColor = 'alguma cor aqui'
 
-	p do html via MARCA:
+	"p" do html via MARCA:
 		var p1 = window.document.getElementsByTagName('p')[0]
 			mandar mostrar na tela:
 				document.write(p1.innerText) (se tiver alguma outra tag como strong, utilizar innerHTML pra mostrar formatado no caso)
