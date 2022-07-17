@@ -1,0 +1,86 @@
+FUNÇÕES! Voltamos à funções.
+
+Já aprendemos coisas simples, mas não ainda sobre passagem de parâmetros, retorno de resultados...
+
+Você tem funções na sua vida. Sua mãe te dá funções:
+
+Vamos supor que sua mãe chega em você toda semana, te dá um dinheiro e diz: Pega esse dinheiro, vai na mercearia, compra o leite, e volte. E uma vez que você terminou o serviço, se encerra essa função.
+
+Vamos dar nome aos bois:
+
+Quando sua mãe te chama e te passa a ordem, isso tem o nome de CHAMADA.
+Não necessariamente tem de ser a sua mãe te chamando pra comprar leite. As vezes, toda quarta feira 8h da manhã você tem que comprar o leite. Então, bateu 8h, CHAMADA pra comprar o leite.
+
+E você não pode ir sem o dinheiro certo? Sem algo de entrada. O nome disso é PARÂMETRO.
+Nesse exemplo, há dois parâmetros: O Dinheiro pra comprar, e o que você queria, no caso O Leite.
+Isso faz parte TAMBÉM da CHAMADA.
+
+Quando você pega o dinheiro, e tem a informação do que foi requisitado (o leite), ir à mercearia, o processo todo que acontece lá dentro, o que você precisa fazer pra conseguir o leite, é chamado de AÇÃO.
+
+E quando você volta pra sua mãe, pra entregar o leite, nós chamamos de RETORNO.
+Nem toda função tem parâmetro, nem toda função tem retorno.
+
+Veja o diagrama-parametro.png na pasta do curso.
+
+	* "Funções são ações executadas assim que são chamadas ou em decorrência de algum evento."
+No exemplo, todo o lance do leite acontece quando você é CHAMADO pela sua mãe ou quando ocorre o EVENTO de bater 8h da manhã e o seu relógio despertar.
+Outros exemplos:
+
+Começou a chover?			//Evento
+	Tira a roupa do varal.	//Ação
+
+	* "Uma função pode receber parâmetros e retornar um resultado."
+	
+Na prática já fizemos funções. Lembra?
+
+	onclick="acao()"...
+		function acao(){
+		bloco
+	}
+	
+Mas nunca passamos parâmetros. Os parâmetros ficariam aqui: " acao(x) "
+E na época, não tinha retorno ao clicar no botao. Mas agora vamos dar um upgrade nisso.
+
+function parimp(n){
+	if (n % 2 == 0){
+		return 'Par!'
+	} else {
+	return 'Ímpar!'
+	}
+}
+
+Essa função per se não vai fazer nada, pois não tem chamada. E pra chamada, após a função ter sido escrita, basta fazer o seguinte, por exemplo:
+
+console.log(parimp(2))		//Par
+
+A função é obvia: Se o número for divisível por 2, retornará Par, se não, Ímpar.
+
+Também podemos fazer o seguinte:
+
+function soma(n1, n2){
+	return n1 + n2
+}
+
+console.log(soma(2, 5))		//7
+
+Uma soma. Mas e se um dos números na chamada não forem digitados? Retornará NaN. Isso porque requer dois números, e se um deles não existe, esse inexistente é considerado undefined, indefinido. Mas da pra 'consertar' isso assim:
+	function soma(n1 = 0, n2 = 0){
+		[...]
+}
+
+Tem como fazer essa bizarrice aqui ó:
+	let v = function(x) {
+		return x*2
+	}
+	
+console.log(v(5))	//10
+
+Passamos pra nossa variável um parâmetro, e ela executou a função. Existe também uma sintaxe chamada arrow function - função flecha -, que utiliza esse sinal: ' => ', mas isso foge do escopo do curso ser básico.
+
+
+
+	
+
+
+
+

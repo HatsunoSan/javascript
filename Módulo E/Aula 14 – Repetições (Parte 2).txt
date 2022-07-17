@@ -1,0 +1,40 @@
+Agora iremos ver sobre a ESTRUTURA DE REPETIÇÃO COM VARIÁVEL DE CONTROLE!
+
+Basicamente, são feitas 3 coisas: inicialização; teste lógico; e o incremento.
+
+Ele fará tudo o que a outra estrutura de repetição faz, MAS, incrementará o bloco. 
+E o código? Como é ?
+
+	for (início ; teste ; incr) {
+		bloco
+	}
+	
+ok, MAS O QUE CARALHOS ESTOU OLHANDO ACIMA? Literal o código abaixo, simplificado:
+
+
+var c = 1
+while (c <= 10) {
+    console.log(`contador ${c}`)
+    c++
+}
+
+OI?
+
+for (var c = 1; c <= 10; c++) {
+		console.log(`contador ${c}`)
+	}
+	
+o for é perfeito quando você sabe as limitações do que você quer fazer.
+
+
+
+
+Mas não é simplesmente isso a aula. Temos que saber também sobre o MODO DE DEPURAÇÃO!
+Pro modo de Depuração, basta teclar F5 no seu teclado.
+
+
+O VSCode vem com um depurador dentro. Você ja percebeu que os códigos todos executam muito rápido né? Tipo, você pede pro programa contar de 1 a 1000 com estruturas de repetição, e em um piscar de olhos ele conta.
+
+MAS, suponhetemos que seja um programa complexo, e em algum lugar esteja dando erro, mas o programa segue até o final, e antes de finalizar algo quebra?
+
+O modo de depuração serve pra isso, ele executa o programa pausadamente, assim você pode ver onde está o erro. Quem sabe você não escreveu o nome de uma variável erroneamente trocando l por I, e aí foi criada uma variável, e não executada a que ja existia? E por isso não estar, tecnicamente, errado, o programa seguiu até o final, falhando lá no fim? Assim você nota o erro.

@@ -1,0 +1,79 @@
+Repetições! Finalmente!
+
+Vamos supor que queremos comer uma pizza, quem não quer, né verdade? 
+Comer uma pizza é algo repetitivo, pegamos uma fatia, abrimos a boca, comemos. Pegamos outra, abrimos a boca, e comemos, e assim até acabar ou enchermos. 
+
+Pensando nisso, vamos criar uma função para isso ficar se repetindo:
+
+function comerPizza() {
+	comerFatia()
+	comerFatia()
+	comerFatia()
+	comerFatia()
+	comerFatia()
+	comerFatia()
+	comerFatia()
+	comerFatia()
+}
+
+A pizza tinha 8 fatias, então, 8 comandos.
+
+Com a programação é assim: partimos de um ponto A, e chegamos ao ponto B. Nossa tarefa na hora de programar é conseguir escrever os programas e atingir nosso objetivo: chegar ao ponto B. E para isso, utilizamos de estruturas de controle
+
+ESTRUTURAS DE CONTROLE:
+
+A Primeira e mais simples de todas é a Estrutura de Controle de SEQUÊNCIAS. Fazemos um passo atrás do outro, um passo atrás do outro, até o momento que a pizza acaba. 
+
+Mas nem sempre é possível fazer tudo com essa estrutura.
+
+As vezes temos que seguir viagem por um caminho, mas se por acaso o caminho estiver bloqueado, temos que pegar um outro caminho.
+
+Para isso, temos a Estrutura de Controle de CONDIÇÕES:
+
+Se o caminho estiver liberado, eu sigo, se não, eu vou por outro caminho.
+
+	if (caminho liberado) {
+		seguirCaminho
+	} else {
+		outroCaminho
+	}
+	
+Mas novamente, nem tudo é sobre condição ou sequências, as vezes temos que fazer tarefas repetidas. E para isso, utilizaremos as Estruturas de Controle de REPETIÇÕES, Ou também conhecido como Laços.
+
+Um laço começa exatamente como uma CONDIÇÃO: ele vai testar uma condição, e assim como na CONDIÇÃO, ele tem duas possibilidades: ou verdadeiro, ou falso.
+
+Mas o comportamento é diferente! Se o resultado for verdadeiro, ele não vai seguir um caminho, ele vai REPETIR, ele irá fazer um laço, e vai testar novamente se a condição é verdadeira.
+E se for verdadeiro novamente? Ele vai testar novamente, e se for verdadeiro, ele vai testar novamente... E ele vai fazer isso enquanto esse teste for verdadeiro.
+
+POR EXEMPLO:
+
+Quero muito comprar a próxima peça do meu computador, e ela custa 2000. Então eu vou juntar dinheiro todo mês.
+
+	Tenho 0 reais, ENQUANTO não tenho 2000, eu junto	//Verdadeiro
+		Junto 500
+	Tenho 500 reais, ENQUANTO não tenho 2000, eu junto	//Verdadeiro
+		Junto 500
+	Tenho 1000 reais, ENQUANTO não tenho 2000, eu junto	//Verdadeiro
+		Junto 500
+	Tenho 1500 reais, ENQUANTO não tenho 2000, eu junto	//Verdadeiro
+		Junto 500
+	Tenho 2000 reais, ENQUANTO não tenho 2000, eu junto	//Falso
+		Paro de juntar.
+		
+No exemplo acima, Ele sempre irá testar se ainda não tenho 2000. Eu ainda não tenho? Verdadeiro, então repito. Eu ainda não tenho? Falso, então eu paro.
+
+Esta é a principal, é a primeira que sempre iremos estudar quando formos aprender repetição seja aonde for. Existem outros? Sim, mas essa é a mais comum de todas. Agora, como escrevemos essa estrutura no javascript que acabamos de escrever?
+
+	while (condição) {
+		bloco
+	}
+Enquanto a condição for verdadeira, ele vai se repetir. Veja o diagrama "repeticao-laco.png" na pasta do Módulo E do curso.
+
+	
+
+
+
+
+
+
+

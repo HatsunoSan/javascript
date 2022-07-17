@@ -2,16 +2,28 @@ alt 96 = 	`	// crase invertida
 alt 92 = 	\	// barra invertida
 alt 124		|	// barra vertical
 
+" ! " SIGNIFICA "NÃO" em javascript!
 
 
 
+APRENDI DA PIOR FORMA QUE É MUITO MELHOR TRATAR AS VARIÁVEIS POR FORA, E NÃO ENQUANTO CRIO A MESMA!!!
+USE A VARIÁVEL APEEEEENNNNNNAAAAAAASSSSSSS PARA SALVAR UM DADO, SE FOR TRATAR (transformar em number por exemplo) TRATE POR FORA! No MÁXIMO, dê .value.
 var n1 = Number.parseInt(window.prompt('Digite um número: ')) 	// converte o resultado pra inteiro
+
 
 var n1 = Number.parseFloat(window.prompt('Digite um número: '))	// converte o resultado pra float
 
 var n1 = Number(window.prompt('Digite um número: '))		// JS se vira pra converter
 
 var n1 = String(window.prompt('Digite um número: '))		// converte para String (desnecessariamente, pq prompt ja retorna string)
+
+As vezes é necessário adicionar um ".value" pra informação digitada ser guardada. Ex:
+	Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> Km/h
+	[...]
+	var txtv = Number(window.document.querySelector('input#txtvel').value) // PRESTE ATENÇÃO NO .VALUE !
+
+var txtv = Number(window.document.querySelector('input#txtvel').value)
+
 
 n.toString() ou String()					// Se o resultado já for um número, converte para String
 	window.alert('A soma dos valores é ' + String(soma))		// exemplo
@@ -67,8 +79,8 @@ Ora, faz o mesmo que o idêntico, mas ao contrário.
 
 Exemplos:
 idade >= 15 && idade <= 17			// a idade está entre 15 e 17?
-estado == "RJ' ││ estado == "SP"	// o estado é RJ ou SP?
-salário > 1500 && sexo != "M"		// o salário é maior que 1500 e o sexo não é masculino?
+estado == "RJ' ││ estado == "SP"		// o estado é RJ ou SP?
+salário > 1500 && sexo != "M"			// o salário é maior que 1500 e o sexo não é masculino?
 
 =========================================================== DOM =============================================================================
 
@@ -82,7 +94,7 @@ selecionar algo:
 		alterar sem selecionar na variável:
 		window.document.body.style.backgroundColor = 'alguma cor aqui'
 
-	p do html via MARCA:
+	"p" do html via MARCA:
 		var p1 = window.document.getElementsByTagName('p')[0]
 			mandar mostrar na tela:
 				document.write(p1.innerText) (se tiver alguma outra tag como strong, utilizar innerHTML pra mostrar formatado no caso)
@@ -92,22 +104,36 @@ Horário atual do sistema:
 var data = new Date()		//Capturar informações atuais do sistema
 var hora = data.getHours()	//salvando a HORA, nao os minutos
 
-CRIAR ELEMENTO!
+CRIAR ELEMENTO OU ALTERAR ELEMENTO!
  
 Por exemplo, uma foto:
 
-	var imagem = document.createElement('img')			//É como se tivesse criado uma tag <img> no html.
+	var imagem = document.createElement('img')				//É como se tivesse criado uma tag <img> no html ao mesmo tempo que a salvo em uma variável.
 	
-	imagem.setAttribute('id', 'foto')					//Aqui estou dando um id à tag criada previamente.
+	imagem.setAttribute('id', 'foto')					//Aqui estou dando um id à tag criada previamente, e também nomeando.
 	
-	imagem.setAttribute('src', 'menino-criança.jpg')	//Aqui estou manipulando mexendo nas propriedades da tag. Perceba as semelhanças na manipulação entre js e html.
+	imagem.setAttribute('src', 'menino-criança.jpg')			//Aqui estou utilizando o mesmo código com propriedades diferentes pra alterar/adicionar uma imagem à tag. Perceba as semelhanças na manipulação entre js e html.
 	
-	IMPORTANTE!!!
+IMPORTANTE!!!
 	
 	var resultado = window.document.querySelector('#res')
 	...
 	resultado.innerHTML = `Detectamos ${sexo} com idade de ${idade} anos`
-	resultado.appendChild(imagem)	//Isso aqui faz com que o elemento que criamos, vire children da div res, fazendo assim com que eventualmente apareça na página
+	resultado.appendChild(imagem)	//Isso aqui faz com que o elemento que criamos, vire children da div res, fazendo assim com que eventualmente apareça na página juntamente da mensagem acima.
+
+
+QUERY SELECTOR
+
+As vezes vc quer usar querySelector + combinators a partir de um elemento em JS, ex
+
+elem.querySelector('> div:first-child');
+
+Não dá pq '> ...' não é um seletor válido. 
+Mas vc pode fazer:
+
+elem.querySelector(':scope > div:first-child');
+
+Pra procurar '> div:first-child' em elem
 
 
 ===================================================== EVENTOS DOM =============================================================================
@@ -173,6 +199,47 @@ CONDIÇÃO COMPLETA/COMPOSTAS:
 	} else {
 		bloco
 	}
+
+============================================= ARRAY; VETOR; VARIÁVEL COMPOSTA ===================================
+		   0  1  2	//esses são seus índices, ou chaves, ou identificadores.
+var num = [5, 8, 4] 	//Essa é a variável composta.
+
+num[3] = 6		//Num 3 recebe 6. Ou seja: Coloque o valor 6 no índice 3.
+
+Pra adicionar um valor no final do vetor, indepentende de quantos valores têm:
+num.push(7)		//num = [5, 8, 4, 6, 7]
+
+E PRA EU SABER O TAMANHO DE UM ARRAY? 
+
+num.length		//Retornará 5. NÃO TEM " () " MESMO.
+
+E SE EU QUISER DEIXAR ELE CRESCENTE?
+
+num.sort()		//[4, 5, 6, 7, 8]
+
+MAS ATENÇÃO! se por acaso o array tiver mais que uma casa decimal, o sort vai considerar APENAS A PRIMEIRA! então, usando o sort() num array em que há 40 e 300, o 300 ficará atrás do 40 como se fosse menor. Isso porque o método sort() por padrão classifica os valores como strings em ordem alfabética e crescente.
+É como se a letra A fosse o número 3 e a letra B fosse o número 4, porque sort considerou apenas o 3 de 300 e o 4 de 40
+
+OK, STRING, BLZ, MAS E OS NUUUMMEEEROOOOSSS EM ORDEM CRESCENTE?
+
+num.sort((a, b) >= a - b)	//Esses parâmetros fazem o sort comparar cada valor com o próximo valor, verificando assim se de fato um é maior que o outro ou  não. Apesar que eu não sei bem o que uma arrow function faz...
+
+E SE EU QUISER BUSCAR VALORES DENTRO DO ARRAY?
+[4, 5, 6, 7, 8]
+
+num.indexOf(7)		//Em que posição o valor 7 está no array "num"? Retornará 3. Mas isso SABENDO QUE EXISTE 7 NO ARRAY! Se não existir, retornará -1.
+
+E SE EU QUISER SABER QUAL O MAIOR VALOR DENTRO DO ARRAY? 
+Math.max.apply(Math, num) //Troque por min se quiser o menor.
+
+faz uma function aí, chamada somar, e então... num.reduce(somar, 0)
+
+
+
+
+
+
+
 
 
 

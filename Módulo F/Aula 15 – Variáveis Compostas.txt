@@ -1,0 +1,100 @@
+Vamos começar a trabalhar com Variáveis Compostas!
+
+mah q poar eh essa
+
+Bom, Variável Composta é a mesma coisa que Array.
+
+Variáveis simples só conseguem armazenar um valor por vez.
+
+var n = 5
+
+e aí eu pego e faço o seguinte também:
+
+var n = 6
+
+a variável não vai se tornar var n = 5,6 ou 56 ou 5 e 6, ela vai se tornar n = 6
+
+A composta eu imagino que você já tenha entendido como ela funciona.
+
+Lembra das vagas de estacionamento lá no início?
+vaga a0 vaga a1 vaga a2...
+
+Pra cada carro, uma vaga... Pra cada variável, uma linha. Imagina 200 carros? Tu vai escrever 200 linhas? Por favor né?
+Então inves de 
+
+	vaga a0
+	vaga a1
+	vaga a2
+	vaga a3
+	vaga a4
+	vaga a5
+
+escreveremos apenas
+	vaga a
+	
+Que são vagas para Automóveis. Beleza, mas com o modo anterior, a gente conseguia identificar cada vaga, e agora?
+
+Bom, dentro dessa variável grandona, há identificadores para cada item salvo nela. Veja a imagem "variavel-composta" na pasta.
+Em azul é a nossa Variável A em Vermelho, salvo dentro dela, suas vagas e identificadores.
+E em código, como isso fica? Simples.
+
+var a = []
+
+Os identificadores, chaves, ou índices como são conhecidos, são automáticos. Cada item que voce colocar lá já vai ter seu identificador.
+
+var a = [bacon, azulejo, beterraba]
+			0		1		2	
+E pra escolhermos algum específico?
+comprar(' a[1] ')
+
+É, esse é o tão "temido" array, ou vetor.
+
+Vetor é uma variável com vários espacinhos. Ele é composto por "elementos". Um elemento de um vetor é um par que agrupa o espaço da memória, o valor colocado dentro dele, e o índice. O identificador ou chave que falamos anteriormente é o tal índice. E por último temos o conteúdo, valor.
+
+Outra coisa: Você pode, em um único array, ter um nome, um número, um endereço NO JAVASCRIPT!
+
+
+Veja o diagrama-de-uma-variavel-composta na pasta para entender bem.
+
+let num = [5, 8, 4]
+Acabamos de declarar uma variável composta (ou vetor ou array) de 3 elementos (0, 1 e 2) que tem os valores 5, 8 e 4
+
+E se eu quiser acrescentar um valor? 
+Veja bem:
+
+let num = [5, 8, 4]
+Só tem apenas 3 índices.
+Se eu quiser acrescentar mais um, terei que fazer da seguinte forma:
+
+num[3] = 6	//Num 3 recebe 6. Ou seja: Coloque o valor 6 no índice 3.
+[5, 8, 4, 6]
+
+MAS E SE EU QUISER ACRESCENTAR UM VALOR NO FINAL DO VETOR SEM NEM SABER O TAMANHO DELE?
+
+num.push(7)
+[5, 8, 4, 6, 7]
+
+E PRA EU SABER O TAMANHO DE UM ARRAY? 
+
+num.length
+IMPORTANTE! NÃO TEM num.length!()! PARÊNTESES DO LADO DE LENGTH EM JAVASCRIPT!!! EM OUTRAS LINGUAGENS TEM
+
+num.sort() para deixar os valores em ordem crescente.
+[4, 5, 6, 7, 8]
+
+
+Mas é possível simplificar a variável composta da seguinte maneira:
+
+for(let c in num){
+	console.log(num[c])
+}
+	   for			in
+QUE? PARA cada c DENTRO de NUM{
+		console.log...
+	}
+	
+Como buscar valores dentro de um array?
+[4, 5, 6, 7, 8]
+num.indexOf(7)	//Essa linha você pode ler da seguinte forma: Em que posição o valor 7 está no array num? A reposta será 3
+Mas isso você SABENDO que o 7 EXISTE NO ARRAY! Se você pedir pro javascript procurar algo que não existe, ele retornará -1
+

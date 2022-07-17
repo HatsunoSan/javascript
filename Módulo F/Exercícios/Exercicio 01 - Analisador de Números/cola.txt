@@ -1,0 +1,71 @@
+let numero = document.querySelector('#numUser')
+let lista = document.querySelector('#lista')
+let resultado = document.querySelector('#res')
+let valores = []
+//DICA PRO FUTURO!!!! ANALISE MUITO BEM O QUE VOCÊ ANOTAR OU SALVAR NA COLINHA! Coisas bobas que você deixar passar fazem MUITA DIFERENÇA! Como o -1 ali. De preferência, dê um jeito de deixar BEM À VISTA COISAS INTERESSANTES!
+
+
+
+//Essa função aqui serve para verificar se o número q o usuário digitou é menor que 1 ou maior que 100.
+function maiorMenor(n){     
+    if (Number(n) >= 1 && Number(n) <= 100){
+        return true
+    } else {
+        return false
+    }
+}
+
+//Essa função é para analisar se o número que o usuário digitou já existe no array ou não.
+function naLista(n, l){
+    if (l.indexOf(Number(n)) != -1){    //-1 = não tem no array
+        return true
+    } else{
+        return false
+    }
+}
+/*
+
+O QUE FOI FEITO? A função abaixo vai verificar se as outras duas funções são FALSAS OU VERDADEIRAS. E aí vai prosseguir ou não dependendo do resultado.
+
+*/
+function adicionar(){
+    //Essa exclamação quer dizer NÃO em Javascript. Ou seja, se é maior que 1/menor que 100 E NÃO ESTÁ NA LISTA... 
+    if (maiorMenor(numero.value) && !naLista(numero.value, valores)) {
+        
+        valores.push(Number(numero.value))
+
+        let item = document.createElement('option')
+        item.text = `Valor ${numero.value} adicionado!`
+        lista.appendChild(item)
+
+    } else {
+        alert('Valor inválido ou já encontrado na lista.')
+    }
+    //Quando todo esse if rolar, a caixa será apagada e logo em seguida o foco estará nela novamente, evitando ter que apagar o tempo todo, automatizando isso.
+    numero.value = ''
+    numero.focus()
+    //Esse innerHTML servirá para caso o usuário clicar em adicionar novamente após já ter clicado em finalizar.
+    resultado.innerHTML = ''
+}
+
+function finalizar(){
+    if (valores.length == 0){
+        alert('Por favor, adicione valores antes de clicar em finalizar!')
+    } else {
+        resultado.innerHTML =
+        `
+        Valores em ordem crescente: ${valores.sort((a, b) => a - b)}. <br>
+        Ao todo, temos ${valores.length} números cadastrados. <br>
+        O maior valor informado foi ${Math.max.apply(Math, valores)}.<br>
+        O menor valor informado foi ${Math.min.apply(Math, valores)}.<br>
+        Somando todos os valores, temos resultado ${valores.reduce(somar, 0)}.<br>
+        A média dos valores digitados é ${valores.reduce(somar, 0)/valores.length}
+        `        
+    }   
+}
+
+function somar(t, n) {
+    return t + n
+}
+
+

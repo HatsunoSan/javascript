@@ -1,0 +1,50 @@
+Importantíssimo a mensagem dessa aula, vá assistir!
+https://www.youtube.com/watch?v=roP93FA-NgU&ab_channel=CursoemV%C3%ADdeo
+
+
+Um Bônus do professor sobre Arrays:
+
+Se você quiser colocar um nome no índice 0, a idade do cara no índice 1 e o endereço no índice 2, NO JAVASCRIPT, você pode! string, numero, valor lógico etc.
+
+O grande problema do array é que o índice fica fixo. Se o índice 0 for o nome do cara, você não pode chamar no seu código por nome, tem que chamar pelo índice 0. SEMPRE será índice 0. Com o tempo você acaba ficando limitado em coisas mais avançadas por conta dos índices numéricos. Pra coisas simples, o array serve bem, mas para coisas avançadas, começa a complicar.
+
+COMEÇANDO A ENTENDER OBJETOS:
+
+Pra eu declarar um objeto em JS, é muito simples: 
+Array, vetor, se declara com " [] " colchetes.
+
+Pra declarar um objeto, se declara com " {} " chaves!
+
+	let amigo = {}
+E você pode dividir exatamente como o array.
+E a GRANDE diferença do array é a seguinte:
+	let num = [5, 8, 4]
+			   0  1  2
+	
+	let amigo = {nome:'José', sexo:'M', peso:85.4, engordar(p){}  }
+					   nome       sexo       peso      engordar()
+					   
+É meu cumpadi, é isso. Mas seguinte, NO JAVASCRIPT, o array é um objeto, e um objeto também é um objeto!
+
+um gostinho:
+
+let amigo = {
+    nome: 'José', 
+    sexo: 'M', 
+    peso: 85.4,
+    engordar(p=0){
+        console.log('Engordou')
+        this.peso += p
+    }   
+}
+
+amigo.engordar(2)
+console.log(`O ${amigo.nome} pesa ${amigo.peso}Kg`)
+
+Adivinha o que vai acontecer com o peso do colega José? É malandro. Tu só começou sua caminhada, mas parabéns por finalizar o curso! VOCÊ CONSEGUIU CARA!!
+
+
+
+
+
+
